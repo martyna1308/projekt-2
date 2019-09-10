@@ -92,6 +92,14 @@ h3 {
     padding: 0 1rem;
 }
 
+.nav-link a {
+    color: #fff;
+}
+
+.nav-link a:hover {
+    color: #fff;
+}
+
 .nav-link.active {
     color: #F5989D;
 }

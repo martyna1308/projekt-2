@@ -126,6 +126,9 @@ nav.bg-light {
 
 .navbar-toggler {
     border: none;
+    font-size: 3rem;
+    position: absolute;
+    top: 20px;
 }
 
 .carousel {

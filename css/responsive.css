@@ -4,4 +4,10 @@
         left: 50%;
         transform: translate(-50%,-11%);
     }
+
+    .header-border {
+        width: calc(100% - 10px);
+        height: calc(100% - 60px);
+    }
 }
+

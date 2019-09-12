@@ -12,7 +12,7 @@ h3,
 h4,
 .header-title p,
 .bg,
-.nav-logo,
+.nav-logo a,
 .shop .price {
     font-family: 'Frank Ruhl Libre', serif;
 }
@@ -24,7 +24,6 @@ h2 {
 .bg {
     font-weight: 900;
 }
-
 
 /* common */
 h1 {
@@ -42,20 +41,38 @@ h3 {
     font-size: 36px;
 }
 
+button {
+    background-color: #F5989D;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+}
+
 .bg {
     font-size: 28em;
     color: #fff;
-    z-index: -1;
     text-shadow: 0px 0px 30px #eeeeee;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
+    margin-left: -16%;
 }
 
-.services,
-.albums,
-.thoughts {
-    height: 700px;
+.bg-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow-x: hidden;
+    z-index: -1;
+
+}
+
+.carousel-control-next .fas,
+.carousel-control-prev .fas {
+    font-size: 45px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background: none;
 }
 
 /* header*/
@@ -87,26 +104,28 @@ h3 {
     transform: translate(-50%,-50%);
 }
 
-.nav-link {
-    color: #fff;
-    padding: 0 1rem;
+nav.bg-light {
+    background-color: transparent!important;
 }
 
-.nav-link a {
-    color: #fff;
-}
 
-.nav-link a:hover {
-    color: #fff;
-}
-
-.nav-link.active {
+.header .nav-item.active {
     color: #F5989D;
 }
 
-.nav-link.disabled {
+.header .navbar-dark .navbar-nav .nav-link {
     color: #fff;
-    font-size: 24px;
+    font-size: 14px;
+}
+
+.header .navbar-dark .navbar-nav .nav-link.disabled {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 7px;
+}
+
+.navbar-toggler {
+    border: none;
 }
 
 .carousel {
@@ -145,6 +164,11 @@ h3 {
     position: relative;
 }
 
+.header .carousel-control-next .fas,
+.header .carousel-control-prev .fas {
+    font-size: 45px;
+}
+
 .header-title {
     position: absolute;
     top: 50%;
@@ -164,7 +188,6 @@ h3 {
 
 /* services */
 .services {
-    position: relative;
     overflow-x: hidden;
 }
 
@@ -224,7 +247,6 @@ h3 {
 /* albums */
 .albums {
     overflow-x: hidden;
-    position: relative;
 }
 
 .albums .container-fluid {
@@ -239,25 +261,10 @@ h3 {
 .albums-title {
     text-align: right;
     padding: 0 17%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
 }
-
-.albums-title button {
-    background-color: #F5989D;
-    color: #fff;
-    border: none;
-    padding: 10px 30px;
-    text-transform: uppercase;
-}
-
 
 .albums-items {
-    height: 100%;
-    position: relative;
+    height: 500px;
 }
 
 .albums-items>div {
@@ -284,26 +291,26 @@ h3 {
 .albums-items .square {
     width: 25%;
     height: 33.33%;
-    transition: all 1s ease;
     animation: rotateMe;
-    animation-duration: 2s;
-   
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
 }
 
 .albums-items .square1 {
-    animation-delay: 1.5s;
+    animation-delay: 8s;
 }
 
 .albums-items .square2 {
-    animation-delay: 2s;
+    animation-delay: 4s;
 }
 
 .albums-items .square3 {
-    animation-delay: 1s;
+    animation-delay: 2s;
 } 
 
 .albums-items .square4 {
-    animation-delay: 2.5s;
+    animation-delay: 6s;
 } 
 
 @keyframes rotateMe {
@@ -311,9 +318,15 @@ h3 {
         transform: rotateY(0deg);
     }
     
-    100% {
+    10% {
         transform: rotateY(360deg);
     }
+
+    100%{
+        transform: rotate(360deg);
+    }
+
+
 }
 
 .albums-items .square-xl {
@@ -364,14 +377,38 @@ h3 {
     margin-top: 90px;
     margin-bottom: 90px;
     overflow-x: hidden;
-    position: relative;
 }
 
 .thoughts-title {
     text-align: center;
+    margin-bottom: 70px;
 }
 
 .thoughts-item {
     background-color: #F2F2F2;
     padding: 40px;
+}
+
+.thoughts .carousel-control-prev i,
+.thoughts .carousel-control-next i {
+    color: #000;
+}
+
+.thoughts .carousel-control-prev {
+    transform: translateX(-100%);
+}
+
+.thoughts .carousel-control-next {
+    transform: translateX(100%);
+}
+
+/* about */
+.about-item {
+    height: 500px;
+    width: 100%;
+    background-color: #000;
+}
+
+.about-title {
+    padding: 0 17%;
 }

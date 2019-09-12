@@ -1,0 +1,7 @@
+@media all and (max-width: 992px) {
+    .nav {
+        top: 60px;
+        left: 50%;
+        transform: translate(-50%,-11%);
+    }
+}
